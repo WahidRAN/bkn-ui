@@ -15,6 +15,7 @@
         <v-tab>Pertanyaan Umum</v-tab>
       </v-tabs>
     </v-app-bar>
+    // Done
 
     <v-content>
       <section id="hero">
@@ -68,6 +69,7 @@
           </v-img>
         </v-row>
       </section>
+      // Done
 
       <section id="about-me">
         <div class="py-12"></div>
@@ -140,6 +142,7 @@
 
         <div class="py-12"></div>
       </section>
+      // Done
 
       <section id="blog">
         <div class="py-12"></div>
@@ -196,8 +199,9 @@
 
         <div class="py-12"></div>
       </section>
+      // Done
 
-      <section id="features" class="grey lighten-3">
+      <section id="layanan" class="grey lighten-3">
         <div class="py-12"></div>
 
         <v-container class="text-center">
