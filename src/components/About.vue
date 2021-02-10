@@ -1,78 +1,79 @@
 <template>
   <section id="about-me">
-    <div class="py-12"></div>
+    <div class="py-8"></div>
 
-    <v-container class="text-center">
-      <h2 class="display-2 font-weight-bold mb-3">VISI</h2>
-
-      <v-responsive class="mx-auto mb-8" width="56">
-        <v-divider class="mb-1"></v-divider>
-
-        <v-divider></v-divider>
-      </v-responsive>
-
-      <v-responsive
-        class="mx-auto title font-weight-light mb-8"
-        max-width="720"
-      >
-        “Menjadi Pembina dan Penyelenggara Manajemen Kepegawaian yang
-        Profesional dan Bermartabat Tahun 2025”
-      </v-responsive>
-
-      <!-- <v-avatar class="elevation-12 mb-12" size="128">
-        <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-      </v-avatar>
-
-      <div></div>
-
-      <v-btn color="grey" href="https://vuetifyjs.com" outlined large>
-        <span class="grey--text text--darken-1 font-weight-bold">
-          Vuetify Documentation
-        </span>
-      </v-btn> -->
-    </v-container>
-    <v-container class="text-center">
-      <h2 class="display-2 font-weight-bold mb-3">MISI</h2>
-
-      <v-responsive class="mx-auto mb-8" width="56">
-        <v-divider class="mb-1"></v-divider>
-
-        <v-divider></v-divider>
-      </v-responsive>
-
-      <v-responsive
-        class="mx-auto title font-weight-light mb-8"
-        max-width="720"
-      >
-        <v-row>
-          <v-col class="mx-2"
-            >Mengembangkan Sistem Manajemen Kepegawaian Negara</v-col
-          >
-          <v-col class="mx-2">Mengembangkan Sistem Pelayanan Kepegawaian</v-col>
-          <v-col class="mx-2">Mengembangkan Manajemen Internal BKN</v-col>
-        </v-row>
-      </v-responsive>
-
-      <!-- <v-avatar class="elevation-12 mb-12" size="128">
-        <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-      </v-avatar>
-
-      <div></div>
-
-      <v-btn color="grey" href="https://vuetifyjs.com" outlined large>
-        <span class="grey--text text--darken-1 font-weight-bold">
-          Vuetify Documentation
-        </span>
-      </v-btn> -->
+    <v-container>
+      <v-row>
+        <v-col class="text-center" cols="12" md="6">
+          <v-img height="450px" src="@/assets/1.png" contain></v-img>
+          <v-img height="200px" src="@/assets/2.jpg" contain></v-img>
+          <v-img height="200px" src="@/assets/3.jpg" contain></v-img>
+        </v-col>
+        <v-col cols="12" md="6">
+          <h2 class="display-2 font-weight-bold mb-3 text-center">AGENDA</h2>
+          <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+            <v-timeline-item v-for="({ date, text }, i) in agendas" :key="i">
+              <span class="headline" slot="opposite" v-text="date"></span>
+              <v-card class="elevation-2">
+                <v-card-text v-text="text"></v-card-text>
+              </v-card>
+            </v-timeline-item>
+          </v-timeline>
+          <v-row>
+            <v-spacer></v-spacer>
+            <v-btn class="mt-16" color="primary">Agenda Lainnya</v-btn>
+            <v-spacer></v-spacer>
+          </v-row>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="4">
+          <v-img height="200px" src="@/assets/statuskp.jpg" contain></v-img>
+        </v-col>
+        <v-col cols="12" md="4">
+          <v-img height="200px" src="@/assets/statuspen.jpg" contain></v-img>
+        </v-col>
+        <v-col cols="12" md="4">
+          <v-img
+            height="200px"
+            src="@/assets/eworkshopcorel.jpg"
+            contain
+          ></v-img>
+        </v-col>
+      </v-row>
     </v-container>
 
-    <div class="py-12"></div>
+    <div class="py-0"></div>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  name: "About"
+  name: "About",
+  data: () => ({
+    agendas: [
+      {
+        date: "1-28 September 2020",
+        text:
+          "Pelaksanaan Seleksi Kompetensi Bidang (SKB) CPNS Formasi Tahun 2019 di Titik Lokasi Wilayah Kerja Kantor Regional V BKN Jakarta"
+      },
+      {
+        date: "3-5 September 2019",
+        text:
+          "Penilaian Potensi dan Kompetensi bagi Pejabat Pimpinan Tinggi Pratama dan Administrator (Talent Pool) di UPT BKN Pontianak"
+      },
+      {
+        date: "1-2 Agustus 2019",
+        text:
+          "Workshop Pengelolaan Kepegawaian Berbasis Merit di Pusat Pengembangan ASN Ciawi"
+      },
+      {
+        date: "29-30 Juli 2019",
+        text:
+          "Workshop Pengukuran Indeks Profesionalitas ASN oleh Direktorat Jabatan ASN di Hotel Ciputra Jakarta"
+      }
+    ]
+  })
 });
 </script>
